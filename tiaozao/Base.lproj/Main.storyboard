@@ -31,7 +31,7 @@
         <!--Item-->
         <scene sceneID="Dps-f3-WcO">
             <objects>
-                <viewController id="JbO-Yo-8KV" customClass="personal_view" customModule="tiaozao" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="geren" id="JbO-Yo-8KV" customClass="personal_view" customModule="tiaozao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Daz-al-9fX"/>
                         <viewControllerLayoutGuide type="bottom" id="PYR-Wg-URS"/>
@@ -40,21 +40,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVY-cF-aOz">
-                                <rect key="frame" x="82" y="336" width="166" height="39"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ybw-wh-2iM">
+                                <rect key="frame" x="0.0" y="236" width="375" height="253"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="189-Ub-GCQ">
-                                <rect key="frame" x="82" y="335" width="166" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="fcN-ed-Jj4" kind="presentation" id="mtz-pa-kg3"/>
+                                    <outlet property="dataSource" destination="JbO-Yo-8KV" id="oG2-bF-85h"/>
+                                    <outlet property="delegate" destination="JbO-Yo-8KV" id="C6f-YJ-5xQ"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Item" id="Omt-zD-z7W"/>
                     <toolbarItems/>
@@ -62,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRQ-Xi-8o2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918" y="1943"/>
+            <point key="canvasLocation" x="917.60000000000002" y="1942.5787106446778"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="jgj-dj-Uv0">
@@ -105,7 +102,7 @@
         <!--Login register View Controller-->
         <scene sceneID="HOc-tu-YGG">
             <objects>
-                <viewController id="fcN-ed-Jj4" customClass="login_register_ViewController" customModule="tiaozao" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="fcN-ed-Jj4" customClass="login_register_ViewController" customModule="tiaozao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q88-O0-fl7"/>
                         <viewControllerLayoutGuide type="bottom" id="104-6R-v6t"/>
@@ -197,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oyb-7J-WvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2694" y="1943"/>
+            <point key="canvasLocation" x="1846" y="1943"/>
         </scene>
     </scenes>
 </document>
