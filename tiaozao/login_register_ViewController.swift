@@ -1,0 +1,75 @@
+//
+//  login_register_ViewController.swift
+//  tiaozao
+//
+//  Created by david on 2017/7/21.
+//  Copyright © 2017年 david. All rights reserved.
+//
+
+import UIKit
+
+class login_register_ViewController: UIViewController {
+    
+
+    @IBOutlet var zhanghu: UITextField!
+    @IBOutlet var mima: UITextField!
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+   
+    
+    //点击return关闭键盘
+    @IBAction func zhanghuclose(_ sender: Any) {
+        zhanghu.resignFirstResponder()
+    }
+    @IBAction func mimaclose(_ sender: Any) {
+        mima.resignFirstResponder()
+    }
+        override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //没有填写账号或密码
+    @IBAction func no_id(_ sender: Any) {
+        let zhanghutext = zhanghu.text
+        if(zhanghutext?.characters.count == 0){
+            let alertController1 = UIAlertController(title:"提示",message:"  请输入账号！",preferredStyle:UIAlertControllerStyle.alert)
+            let action1 = UIAlertAction(title:"确定",style:UIAlertActionStyle.default,handler:nil)
+            alertController1.addAction(action1)
+            self.present(alertController1,animated: true,completion: nil)
+        }
+        let mimatext = mima.text
+        if(mimatext?.characters.count == 0){
+            let alertController2 = UIAlertController(title:"提示",message:"  请输入密码！",preferredStyle:UIAlertControllerStyle.alert)
+            let action2 = UIAlertAction(title:"确定",style:UIAlertActionStyle.default,handler:nil)
+            alertController2.addAction(action2)
+            self.present(alertController2,animated: true,completion: nil)
+        }
+        //密码达不到要求的6位
+        let mimatext2 = mima.text
+        if((mimatext2?.characters.count)! <= 5){
+            let alertController3 = UIAlertController(title:"提示",message:"  请输入6位密码！",preferredStyle:UIAlertControllerStyle.alert)
+            let action3 = UIAlertAction(title:"确定",style:UIAlertActionStyle.default,handler:nil)
+            alertController3.addAction(action3)
+            self.present(alertController3,animated: true,completion: nil)
+        }
+    }
+
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
