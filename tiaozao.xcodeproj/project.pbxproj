@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187B33351F2ECB8B00EA34B0 /* mobile_register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B33341F2ECB8B00EA34B0 /* mobile_register_ViewController.swift */; };
 		631D8DC51F29F91E005A3A68 /* home_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631D8DC41F29F91E005A3A68 /* home_view.swift */; };
 		631D8DC71F29FA9E005A3A68 /* infor_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631D8DC61F29FA9E005A3A68 /* infor_view.swift */; };
 		631D8DC91F29FAB1005A3A68 /* personal_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631D8DC81F29FAB1005A3A68 /* personal_view.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		187B33341F2ECB8B00EA34B0 /* mobile_register_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mobile_register_ViewController.swift; sourceTree = "<group>"; };
 		631D8DC41F29F91E005A3A68 /* home_view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = home_view.swift; sourceTree = "<group>"; };
 		631D8DC61F29FA9E005A3A68 /* infor_view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infor_view.swift; sourceTree = "<group>"; };
 		631D8DC81F29FAB1005A3A68 /* personal_view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personal_view.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				63769EBD1F2243610078F396 /* login_register_ViewController.swift */,
 				63769EE71F26240C0078F396 /* login_register.swift */,
 				6346B1331F2233BC00DEA397 /* Main.storyboard */,
+				187B33341F2ECB8B00EA34B0 /* mobile_register_ViewController.swift */,
 				631D8DC41F29F91E005A3A68 /* home_view.swift */,
 				631D8DC61F29FA9E005A3A68 /* infor_view.swift */,
 				631D8DC81F29FAB1005A3A68 /* personal_view.swift */,
@@ -176,6 +179,7 @@
 				63769EE81F26240C0078F396 /* login_register.swift in Sources */,
 				631D8DC71F29FA9E005A3A68 /* infor_view.swift in Sources */,
 				631D8DC51F29F91E005A3A68 /* home_view.swift in Sources */,
+				187B33351F2ECB8B00EA34B0 /* mobile_register_ViewController.swift in Sources */,
 				6346B1321F2233BC00DEA397 /* ViewController.swift in Sources */,
 				6346B1301F2233BC00DEA397 /* AppDelegate.swift in Sources */,
 				63769EBE1F2243610078F396 /* login_register_ViewController.swift in Sources */,
@@ -303,6 +307,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LAP4768476;
 				INFOPLIST_FILE = tiaozao/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = david.tiaozao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -316,6 +321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LAP4768476;
 				INFOPLIST_FILE = tiaozao/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = david.tiaozao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
