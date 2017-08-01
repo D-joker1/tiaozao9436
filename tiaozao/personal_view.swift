@@ -31,7 +31,7 @@ class personal_view: UIViewController {
         let i =  indexPath.row
         let cellview=tableView.cellForRow(at: indexPath)
         if(i == 5){
-            print("i love you!")
+            print("选择“登录”按钮")
             let sb = UIStoryboard(name:"Main", bundle: nil)
             let vc1 = sb.instantiateViewController(withIdentifier: "login") as UIViewController
             self.present(vc1, animated: true, completion: nil)

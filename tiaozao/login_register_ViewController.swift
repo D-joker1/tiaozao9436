@@ -13,6 +13,7 @@ class login_register_ViewController: UIViewController {
 
     @IBOutlet var zhanghu: UITextField!
     @IBOutlet var mima: UITextField!
+    @IBOutlet var zhuce: UIButton!
     
 
     override func viewDidLoad() {
@@ -59,6 +60,16 @@ class login_register_ViewController: UIViewController {
             self.present(alertController3,animated: true,completion: nil)
         }
     }
+
+    
+    
+
+    
+//    @IBAction func zhuce(_ sender: Any) {
+//        let sb1 = UIStoryboard(name:"Main", bundle: nil)
+//        let vc1 = sb1.instantiateViewController(withIdentifier: "zhuce-shoujizhuce") as UIViewController
+//        self.present(vc1, animated: true, completion: nil)
+//    }
 
     
 
