@@ -145,5 +145,6 @@ class school_register_ViewController:UIViewController, UIPickerViewDelegate, UIP
         xuexiao.text = schools
         
     }
-    
+    @IBAction func unwindToDL(segue: UIStoryboardSegue) {
+    }
 }

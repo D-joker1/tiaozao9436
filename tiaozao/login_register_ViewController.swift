@@ -13,7 +13,8 @@ class login_register_ViewController: UIViewController {
 
     @IBOutlet var zhanghu: UITextField!
     @IBOutlet var mima: UITextField!
-    @IBOutlet var zhuce: UIButton!
+    @IBOutlet weak var zhuce: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
     
 
     override func viewDidLoad() {
@@ -71,16 +72,20 @@ class login_register_ViewController: UIViewController {
 //        self.present(vc1, animated: true, completion: nil)
 //    }
 
-    
+      @IBAction func unwindToDL(segue: UIStoryboardSegue) {
+    }
 
-    /*
+ /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if sender as! NSObject == self.loginBtn{
+            UserDefaults.standard.set(zhanghu.text,forKey: "tiaozaoID")
+            UserDefaults.standard.set(mima.text,forKey: "tiaozaoPwd")
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
+*/
 }

@@ -48,13 +48,13 @@ class mobile_register_ViewController: UIViewController {
     }
 
     
- /*
+ 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func unwindToDL(segue: UIStoryboardSegue) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
 }
- */
+ 
 }
