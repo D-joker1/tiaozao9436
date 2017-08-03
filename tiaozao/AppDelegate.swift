@@ -12,7 +12,60 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    //通道
+    var xs: XMPPStream?
+    //服务器是否开启
+    var isOpen = false
+    //密码
+    var pwd = ""
+    
+    //建立通道
+    func bulidStream(){
+        xs = XMPPStream()  //通道对象
+        xs?.addDelegate(self, delegateQueue: DispatchQueue.main) //得到主线程
+    }
+    
+    //发送上线状态
+    func goOnline(){
+        var p = XMPPPresence()
+        
+        xs!.send(p)
+    }
+    //发送下线状态
+    func goOffLine(){
+        var p = XMPPPresence(type:"unavailabe")
+        
+        xs!.send(p)
+    }
+    
+    //连接服务器（查看服务器是否可连接）
+    func connect() -> Bool {
+        bulidStream()
+        //通道已连接
+        if xs!.isConnected(){
+            return true
+        }
+        let user = UserDefaults.standard.string(forKey: "")
+        let password = UserDefaults.standard.string(forKey: "")
 
+/*        if (user != nil && password != nil){
+          xs!.connect(withTimeout: 5000)
+        
+        //密码保存备用
+         pwd = password!
+
+        }
+ */
+        
+        
+        return false
+    }
+
+    //断开链接
+    func disConnect(){
+        goOffLine()
+        xs!.disconnect()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
