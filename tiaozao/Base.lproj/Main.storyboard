@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +27,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1s-RI-zbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918" y="1134"/>
+            <point key="canvasLocation" x="492" y="1134"/>
         </scene>
         <!--Item-->
         <scene sceneID="Dps-f3-WcO">
@@ -80,6 +81,45 @@
             </objects>
             <point key="canvasLocation" x="918" y="340"/>
         </scene>
+        <!--聊天-->
+        <scene sceneID="0LM-fF-VWD">
+            <objects>
+                <tableViewController id="SNT-uG-phQ" customClass="chatViewController" customModule="tiaozao" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qj3-rD-2Iw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textField key="tableFooterView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="nCJ-RF-8dX">
+                            <rect key="frame" x="0.0" y="72" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yTJ-LA-ubf">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yTJ-LA-ubf" id="W3B-xr-IVr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SNT-uG-phQ" id="iBx-XL-qon"/>
+                            <outlet property="delegate" destination="SNT-uG-phQ" id="vth-cI-Jp4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="聊天" id="Iqy-8g-TSp"/>
+                    <connections>
+                        <outlet property="msg" destination="nCJ-RF-8dX" id="pht-mY-FNU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWe-2a-kEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3676" y="1134"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="coD-fo-vna">
             <objects>
@@ -99,6 +139,45 @@
             </objects>
             <point key="canvasLocation" x="-260" y="1134"/>
         </scene>
+        <!--好友列表-->
+        <scene sceneID="vf5-vd-d80">
+            <objects>
+                <tableViewController id="jSK-B8-fCc" customClass="BuddyViewController" customModule="tiaozao" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FeR-RW-rKr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="buddyListCell" id="ye9-o4-VcK">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ye9-o4-VcK" id="HKO-hH-xf3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jSK-B8-fCc" id="CmT-4J-yu0"/>
+                            <outlet property="delegate" destination="jSK-B8-fCc" id="odx-5w-9LU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="好友列表" id="IJs-IT-Zng">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="uoK-qk-3WF"/>
+                        <barButtonItem key="rightBarButtonItem" title="登陆" id="9oM-bC-9n8">
+                            <connections>
+                                <segue destination="fcN-ed-Jj4" kind="presentation" id="ub2-Ca-If3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="SNT-uG-phQ" kind="show" id="oet-Gp-OGg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9da-Pz-bZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2223" y="1134"/>
+        </scene>
         <!--Login register View Controller-->
         <scene sceneID="HOc-tu-YGG">
             <objects>
@@ -112,7 +191,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flea Market" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjA-sA-Aax">
-                                <rect key="frame" x="91" y="121" width="193" height="71"/>
+                                <rect key="frame" x="91" y="120.5" width="193" height="70.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
@@ -181,22 +260,24 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8Dn-A4-Uho" kind="presentation" id="unX-iR-caa"/>
+                                    <segue destination="D1x-0D-Nw7" kind="presentation" identifier="toNumberLogin" id="unX-iR-caa"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97667485480000005" green="0.83697712420000003" blue="0.206535846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="loginBtn" destination="hmf-kd-NpL" id="iJ2-kg-8OU"/>
                         <outlet property="mima" destination="MPV-PR-oGV" id="zxX-Ve-azI"/>
                         <outlet property="zhanghu" destination="Gaq-rq-fFe" id="lAr-19-2SX"/>
+                        <outlet property="zhuce" destination="acS-EU-qfB" id="vGi-US-X2Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oyb-7J-WvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1853.5999999999999" y="1942.5787106446778"/>
         </scene>
-        <!--Mobile register View Controller-->
+        <!--手机注册-->
         <scene sceneID="paJ-dr-cZg">
             <objects>
                 <viewController id="8Dn-A4-Uho" customClass="mobile_register_ViewController" customModule="tiaozao" customModuleProvider="target" sceneMemberID="viewController">
@@ -217,20 +298,7 @@
                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="手机注册" id="34R-BT-fJG">
-                                        <barButtonItem key="leftBarButtonItem" title="取消" style="plain" id="a9V-Zn-p4x">
-                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <segue destination="fcN-ed-Jj4" kind="presentation" id="JdQ-PJ-zb6"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="下一步" style="plain" id="TDC-sv-oaz">
-                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <action selector="error:" destination="8Dn-A4-Uho" id="a5o-ET-S5l"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="手机注册" id="34R-BT-fJG"/>
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jyk-7H-0pY">
@@ -250,13 +318,28 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97667485480000005" green="0.83697712420000003" blue="0.206535846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="手机注册" id="bW4-zQ-2qY">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="mKJ-cd-aCd">
+                            <color key="tintColor" red="0.95704036950000004" green="0.81723207239999995" blue="0.19981491570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="qcV-NX-MgM" kind="unwind" unwindAction="unwindToDLWithSegue:" id="cwk-Av-pc4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="下一步" id="RZv-R6-Ris">
+                            <color key="tintColor" red="0.97667485480000005" green="0.83697712420000003" blue="0.206535846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="sVb-HS-v8d" kind="presentation" id="krt-PD-hh7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mobile" destination="jyk-7H-0pY" id="R47-0t-SAl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ypt-qx-c56" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qcV-NX-MgM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2588" y="1943"/>
+            <point key="canvasLocation" x="3424.8000000000002" y="1942.5787106446778"/>
         </scene>
         <!--info register View Controller-->
         <scene sceneID="X6S-WP-hFl">
@@ -360,10 +443,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlo-kw-v6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bA9-qm-ulA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4061.5999999999999" y="1942.5787106446778"/>
         </scene>
-        <!--School register View Controller-->
+        <!--学校注册-->
         <scene sceneID="Ect-YD-t1I">
             <objects>
                 <viewController storyboardIdentifier="zhuce_xuexiaozhuce" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NPy-sU-agN" customClass="school_register_ViewController" customModule="tiaozao" customModuleProvider="target" sceneMemberID="viewController">
@@ -486,6 +570,20 @@
                         <color key="backgroundColor" red="0.97667485480000005" green="0.83697712420000003" blue="0.206535846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                     </view>
+                    <navigationItem key="navigationItem" title="学校注册" id="erx-F1-J1U">
+                        <barButtonItem key="leftBarButtonItem" title="上一步" id="dDK-Bt-wVt">
+                            <color key="tintColor" red="0.96096569300000001" green="0.82117003200000005" blue="0.20459410550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="TUS-9f-Iw9" kind="unwind" unwindAction="unwindToDLWithSegue:" id="T9J-QT-nYT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="下一步" id="gk7-Tx-flj">
+                            <color key="tintColor" red="0.96096569300000001" green="0.82117003200000005" blue="0.20459410550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="PJ2-a4-29T" kind="presentation" id="M0o-5M-aDM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="sheng" destination="lIf-Vv-npM" id="8ts-bv-Xwa"/>
                         <outlet property="shi" destination="eTD-ND-FbO" id="P87-cZ-orE"/>
@@ -493,8 +591,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzo-aS-rp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TUS-9f-Iw9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3328.8000000000002" y="1942.5787106446778"/>
+            <point key="canvasLocation" x="5007.1999999999998" y="1942.5787106446778"/>
         </scene>
         <!--Mimashezhi View-->
         <scene sceneID="A9S-t0-NOk">
@@ -548,14 +647,14 @@
                                 <rect key="frame" x="16" y="391" width="150" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.35579239579999999" green="0.70925206220000003" blue="0.70494628329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请再次输入密码以进行确认" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgm-82-nY6">
                                 <rect key="frame" x="16" y="478" width="159" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.35579239579999999" green="0.70925206220000003" blue="0.70494628329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9N-sL-gqe">
